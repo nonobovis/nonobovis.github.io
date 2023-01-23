@@ -1,0 +1,938 @@
+/** FUENTES **/
+
+@font-face{
+    font-family: "Big John";
+    scr: url("fonts/BIG JOHN.otf");
+}
+
+@font-face{
+    font-family: Gravity;
+    scr: url("fonts/Gravity-Regular.otf");
+}
+
+@font-face{
+    font-family: "Gravity italic";
+    scr: url("fonts/Gravity-Italic.otf");
+}
+
+@font-face{
+    font-family: "Gravity light";
+    scr: url("fonts/Gravity-Light.otf");
+}
+
+/** ----- **/
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html { 
+    box-sizing: border-box;
+}
+  
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+
+/** LOGO **/
+
+.logo{
+
+    width: 70px;
+}
+
+/** ---- **/
+
+
+
+/** MENÚ **/
+
+div nav{
+
+    line-height: 1.6;
+    font-family: "Big John"; 
+}
+
+nav{
+
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    min-height:8vh;
+    background-color: transparent;
+}
+
+nav a{
+
+    font-family: "Big John";
+    color: black;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+/* Utilizo text-decoration: none; para eliminar el subrayado por defecto */
+
+.ham{
+    display:none;
+    background-color:transparent;
+    cursor: pointer;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+/* Utilizo cursor:pointer para mostrar en el puntero una mano que puede 
+pinchar sobre el elemento */
+    
+.ham span{
+    background-color: black;
+    display:block;
+    height:3px;
+    width: 28px;
+    margin:10px auto;
+    border-radius:2px;    
+}
+
+.enlaces-menu{
+      display:flex;
+      padding:0;
+}
+
+.enlaces-menu li{
+    padding: 0 40px;
+    list-style-type: none;
+    transition: 0.3s;
+}
+
+.enlaces-menu li a{
+    text-decoration:none;
+    font-size: 1.15rem;
+    color:black;
+    font-weight:600;
+}
+
+.enlaces-menu li::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.enlaces-menu li:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.enlaces-menu li::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #FFDEDD;
+  z-index: -1;
+  transition: transform .4s ease;
+}
+
+/* Utilizo hover para definir para mostrar en el puntero una mano que puede 
+pinchar sobre el elemento */
+
+.enlaces-menu li {
+  position: relative;
+  font-size: 5rem;
+}
+
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
+  }
+}
+
+/** ---- **/
+
+
+
+/* ANIMACIONES MENU */
+  
+@keyframes muestraMenu {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .enlaces-menu.activado{
+      display:flex; 
+      animation: muestraMenu 350ms ease-in-out both;
+  }
+
+  .br-1.animado{
+    transform: rotate(-45deg) translate(-10px, 8px);
+  }
+  
+  .br-2.animado{
+    opacity: 0;
+  }
+  .br-3.animado{
+    transform: rotate(45deg) translate(-10px, -8px);
+  }
+
+ .ham.girar:hover{
+     transform:rotate(360deg);
+ }
+
+/* --------------- */
+
+
+
+/* GENÉRICOS */
+
+.main{
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+.subtitle{
+
+    text-align: center;
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    margin-top: 100px;
+}
+
+h2{
+    color: white;
+    margin-top: 25px;
+    font-family: "Big John";
+}
+h3{
+    font-family: Gravity;
+}
+
+/* --------------- */
+
+
+
+/** SOMOS POTENCY **/
+
+.seccion_1{
+    background: white;
+    height: 70vh;
+    width: 90%;
+    margin-top: 50px;
+    
+
+}
+
+h1{
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 32px;
+}
+
+h1 .titulo{
+    
+    font-size: 3em;
+    color: black;
+    font-family: "Big John";
+}
+
+.parrafo_1{
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+#somospotency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    margin-block-start: 2em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-family: Gravity;
+}
+
+#mas{
+    display: flex;
+    width: 80px;
+    font-family: Gravity;
+    font-weight: 500;
+    border-radius: 20px;
+    margin: 25px;
+    padding: 15px 30px;
+    color: white;
+    align-content: center;
+    background-color: #E5332A;
+    justify-content: center;
+    text-decoration: none; 
+}
+
+/** ------------- **/
+
+
+
+/** SECCIÓN YA TOCA**/
+
+.subtitle_2{
+
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+
+
+.yatoca{
+
+    height: 420px;
+    background-color: #E5332A;
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.yatoca_container{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+    
+}
+
+.yatoca_picture{
+
+    max-width: 500px;
+}
+
+.yatoca_paragraph{
+
+    color: white;
+    font-family: Gravity;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.yatoca_img{
+
+    width: 100%;
+    display: block;
+}
+
+.cta {
+
+    font-family: "Big John";
+    display: flex;
+    background-color: white;
+    justify-self: center;
+    color: #E5332A;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+    align-content: center;
+    justify-content: center;
+    margin-right: 100px;
+    margin-left: 100px;
+
+
+}
+
+/* Utilizo una caja flex para crear esta sección con imagen y texto,
+despues ajusto sus posiciones asignandoles un padding, justify-content,
+aling-items. Y utilizo otros parámetros mas para darle las demás carecterísticas */
+
+/** -------- **/
+
+
+/** SERVICIOS **/
+
+.about__paragraph{
+
+    line-height: 1.7;
+}
+.about__main{
+
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+.about__icons{
+
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.about__icon{
+
+    width: 40px;
+}
+
+/* Utilizo display grid con grid-template-columns para definir el número de columnas que tendrá nuestra rejilla,
+ así como los tamaños asignados a cada una para crear esta sección*/
+
+
+/** -------- **/
+
+
+/** EQUIPO **/
+
+.personas{
+
+    text-align: center;
+}
+
+.personas__table{
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.personas__element{
+    border: black solid 1px;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-names: black;
+    --bg-cta: #fff;
+    --color-cta: #3B3B3B;
+    --color-items: #696871;
+}
+
+.personas__profession{
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.personas__name{
+    font-family: "Big John";
+    font-size: 2rem;
+    color: var(--color-names);
+
+}
+
+.personas__items{
+    margin-top: 35px;
+    display: grid;
+    justify-content: center;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-items);
+}
+
+.personas__cta{
+    font-family: Gravity;
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    font-weight: 600;
+    color: var(--color-cta);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+.personas__element--best{
+    width: 370px;
+    padding: 60px 40px;
+    background-color: #E5332A;
+    --color-plan: rgb(255 255 255 / 75%);
+    --color-price: #fff;
+    --bg-cta: #84201B;
+    --color-names: white;
+    --color-items: #fff;
+    --color-cta: white;
+}
+
+/** -------- **/
+
+/** OPINIONES **/
+
+.testimony{
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-bottom: 0px;
+}
+
+.testimony__container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+
+}
+
+.testimony__body{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.testimony__body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.testimony__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.testimony__texts{
+    max-width: 700px;
+    padding-bottom: 70px;
+
+
+}
+
+
+.testimony__course{
+    background-color: #E5332A;
+    color: white;
+    display: inline-block;
+    padding: 5px;
+}
+
+.testimony__arrow{
+    width: 90%;
+    cursor: pointer;
+}
+
+/** -------- **/
+
+/** ACORDEÓN FAQ **/
+
+.contenedor-acordeon{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 80px;
+}
+.contenedor-acordeon h2{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+.acordeon{
+    background-color: white;
+    margin-top: 20px;
+}
+.acordeon label{
+
+    font-family: Gravity;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    font-size: 18px;
+    background: #E5332A;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: all 300ms ease;
+
+}
+.acordeon label:hover{
+    background: #2e2e2e;
+}
+.acordeon .contenido-acordeon{
+    font-family: Gravity;
+    padding: 0px;
+    margin: 0px 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+
+
+.btn-acordeon:checked ~ .contenido-acordeon{
+    max-height: 600px;
+    padding: 15px 0px;
+
+}
+/* Con esto hacemos que si el input tiene el checked (ya que esta
+asociado con la etiqueta label) se mostrará el contenido del acordeon */
+
+.btn-acordeon{
+    display: none;
+
+}
+
+/** -------- **/
+
+/* Footer */
+
+.footer{
+    background-color: black;
+}
+
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+.footer__copy{
+    margin-top: 100px;
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer__copyright{
+    font-weight: 300;
+    text-decoration: none;
+    font-family: Gravity;
+    padding: 8px;
+    color: white;
+
+}
+
+.footer__icons{
+    margin-bottom: 10px;
+}
+
+.footer__img{
+    width: 30px;
+}
+
+/* ----- */
+
+/* ADAPTABILIDAD */
+
+@media screen and (max-width: 600px){
+
+	#logo{
+		height: 70px;
+		margin-left: 2px;
+	}
+
+	img{
+
+		display: flex;
+		height: 60%;
+
+	}
+
+	.menu-logo{
+
+		display: flex;
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+
+	.seccion_1{
+
+		background: white;
+		height: 70vh;
+		width: 90%;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+	h1{
+		font-size: 18px;
+		margin-top: 15px;
+	}
+
+	.subtitle{
+        font-size: 1.8rem;
+    }
+
+    .price__element{
+        width: 90%;
+    }
+
+    .price__element--best{
+        width: 90%;
+        /* padding: 40px; */
+    }
+
+    .price__price{
+        font-size: 2rem;
+    }
+
+    .testimony{
+        --padding-container: 60px 0;
+    }
+
+    .testimony__container{
+        grid-template-columns: 28px 1fr 28px;
+        gap: .9em;
+    }
+
+    .testimony__arrow{
+        width: 100%;
+    }
+
+    .testimony__course{
+        margin-top: 15px;
+    }
+
+    
+
+
+
+}
+
+@media screen and (max-width: 400px){
+
+
+	.seccion_1{
+
+		background: white;
+		--height: 100vh;
+		width: 90%;
+		margin-top: 50px;
+		margin-bottom: 80px;
+	}
+	p img{
+		height: 200;
+	}
+}
+
+@media screen and (max-width: 500px){
+    .seccion_1{
+
+        background: white;
+        height: 80vh;
+        width: 90%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+    }
+
+}
+
+@media screen and (max-height: 700px){
+   
+	.yatoca{
+
+    	margin-top: 220px;
+    }
+
+	
+}
+@media (max-width:768px) {
+    
+    img.logo{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .ham{
+        display:block;
+        cursor:pointer;
+        position: absolute; 
+        top:15px;
+        right:25px;
+        transition: 0.2s  0.1s; 
+  
+    }
+   
+      
+    nav{
+        flex-direction:column;
+        align-items: flex-start;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+      
+
+    .enlaces-menu{
+        
+        flex-direction:column;
+        justify-content: space-around;
+        align-items:center;
+        height: 92vh;         
+        margin:0;
+        padding:0; 
+        display:none;
+        opacity:0;
+        transition: opacity 5s ease-out;
+        width:100%;
+      
+         
+    }
+
+    .enlaces-menu li{
+        text-align:center;
+        width:100%;
+        padding:20px;    
+    }
+  
+}
+
+@media screen and (max-width: 800px){
+
+    
+    .menu-logo{
+
+        
+        display: flex;
+        height: 90%;
+    }
+
+    img{
+
+        display: flex;
+        height: 70%;
+    }
+    .seccion_1{
+
+        background: white;
+        height: 80vh;
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    h1{
+
+    }
+
+    p{
+        margin: 10, 10, 10, 10;
+    }
+    .about__main{
+        gap: 2em;
+    }
+
+    .about__icons:last-of-type{
+        grid-column: 1/-1;
+    }
+
+    .yatoca{
+        height: 720px;
+    }
+
+
+    .yatoca_container{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 3em;
+        text-align: center;
+    }
+
+    .yatoca_picture{
+        grid-row: 1/2;
+        justify-self: center;
+    }
+
+    .testimony__container{
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .testimony__body{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        gap: 3em;
+        justify-items:center ;
+    }
+
+
+    .testimony__img{
+        width: 200px;
+        height: 200px;
+        
+    }
+
+    .questions__copy{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 900px){
+    .contenedor-acordeon{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 930px){
+    .enlaces-menu li a{
+      text-decoration:none;
+      font-size: 0.9rem;
+      color:black;
+      font-weight:600;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
